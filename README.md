@@ -54,7 +54,7 @@ optional arguments:
   -m MODEL, --model MODEL
 ```
 
-The following example infers language labels for single example audio file:
+The following example infers language labels for a single example audio file:
 
 ```
 $ python3 splidnn.py infer --model model_epoch5 /tmp/de_example_file.flac 
@@ -63,4 +63,4 @@ $ python3 splidnn.py infer --model model_epoch5 /tmp/de_example_file.flac
 
 ## Results
 
-The results of the sample training run are included in `output.txt` and well the best model/trainer pair `model_epoch5`, `trainer_epoch5`. We chose to stop training after 5 epochs to avoid overfitting to the input dataset.
+The results of the sample training run are included in `output.txt` as well as the best model/trainer pair `model_epoch5`, `trainer_epoch5`. We stop training after 5 epochs to avoid overfitting to the input dataset.
