@@ -126,7 +126,7 @@ class LngDataset(data.Dataset):
             raise ValueError(f"Unable to determine label for: {item.name}")
         signal, sample_rate = soundfile.read(item.open("r"))
         X = fbanks(signal, sample_rate).astype(np.float32)
-        X = X.reshape(1, *X.shape)
+        X = X[np.newaxis, ...]
         return X, y
     
     def __len__(self):
