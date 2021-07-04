@@ -197,6 +197,7 @@ def infer(model, inputs, *, labels=("DE", "EN", "ES")):
         with soundfile.SoundFile(audio) as sf:
             out = []
             for signal in catch(sf.blocks(sf.samplerate * 10, fill_value=0)):
+                # Downmix to mono
                 if signal.ndim > 1:
                     signal = np.mean(signal, axis=1)
                 X = fbanks(signal, sf.samplerate).astype(np.float32)
